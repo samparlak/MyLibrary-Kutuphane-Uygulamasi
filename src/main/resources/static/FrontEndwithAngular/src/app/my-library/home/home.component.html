@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="col-md-12">
+    <div class="ml-5 mt-1">
+
+      <div class="input-group mb-5">
+        <input type="search" [(ngModel)]="filtered" class="form-control" placeholder="Filtreyi kullanarak Kitap,Yazar veya Yayın Evi ara"
+          aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <span class="input-group-text">Filtre</span>
+          <button (click)="filtreleKitaplar()" class="btn btn btn-outline-primary">Kitap</button>
+          <button (click)="filtreleYazarlar()" class="btn btn btn-outline-primary">Yazar</button>
+          <button (click)="filtreleYayinlar()" class="btn btn btn-outline-primary">Yayın</button>
+        </div>
+      </div>
+
+
+      <!-- <input type="search" [(ngModel)]="filtered" class="form-control mt-3 ">
+            <div class="btn-group mb-5">
+                <button (click)="filtreleKitaplar()"  class="btn btn-sm btn-primary">Kitap</button>
+                <button (click)="filtreleYazarlar()"  class="btn btn-sm btn-primary">Yazar</button>
+                <button (click)="filtreleYayinlar()"  class="btn btn-sm btn-primary">Yayın</button>
+            </div> -->
+
+
+
+      <!-- <select name="filtre" id="filtre">
+              <option value="kitapAdi" (click)="filtreleKitaplar()" >Kitap Adı</option>
+              <option value="yazarAdi" (click)="filtreleYazarlar()" >Yazar Adı</option>
+              <option value="yayinAdi"  (click)="filtreleYayinlar()"  >Yayın Adı</option>
+            </select> -->
+
+      <div *ngIf="filtreKitap">
+        <h2 class="text-center ">Kitaplar</h2>
+        <button class="btn btn-success mb-2">Yeni Kitap Ekle</button>
+        <hr>
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>ISBN No</th>
+              <th>Kitap Adı</th>
+              <th>Yazar Adı</th>
+              <th>Yayınevi Adı</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let kitap of kitaplar | filtre:filtered:'kitapAdi'">
+            <tr>
+              <td>
+                <img src="../assets/logos/book-icon.png" alt="" style="max-height:40px;">
+              </td>
+              <td>{{kitap.isbnNo}}</td>
+              <td>{{kitap.kitapAdi}}</td>
+              <td>{{kitap.yazarAdi}}</td>
+              <td>{{kitap.yayinEviAdi}}</td>
+              <td class="btn-group"><button class=" btn btn-outline-success">Düzenle</button>
+                <button class="btn btn-outline-danger">Sil</button></td>       
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div *ngIf="filtreYazar">
+        <h2 class="text-center ">Yazarlar</h2>
+        <button class="btn btn-success mb-2">Yeni Yazar Ekle</button>  
+        <hr>      
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Yazar Adı</th>
+              <th>Kitap Adı</th>
+              <th>İşlemler</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let yazar of yazarlar | filtre:filtered:'yazarAdi' ">
+            <tr>
+              <td>
+                <img src="../assets/logos/book-icon.png" alt="" style="max-height:40px;">
+              </td>
+              <td>{{yazar.yazarAdi}}</td>
+              <td>{{yazar.kitapAdi}}</td>
+              <td class="btn-group"><button class=" btn btn-outline-success">Düzenle</button>
+                <button class="btn btn-outline-danger">Sil</button></td> 
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div *ngIf="filtreYayin">
+        <h2 class="text-center ">Yayın Evleri</h2>
+        <button class="btn btn-success mb-2">Yeni Yayınevi Ekle</button>
+        <hr>
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Yayın Adı</th>
+              <th>Kitap Adı</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let yayin of yayinEvleri | filtre:filtered:'yayinEviAdi' ">
+            <tr>
+              <td>
+                <img src="../assets/logos/book-icon.png" alt="" style="max-height:40px;">
+              </td>
+              <td>{{yayin.yayinEviAdi}}</td>
+              <td>{{yayin.kitapAdi}}</td>
+              <td class="btn-group"><button class=" btn btn-outline-success">Düzenle</button>
+                <button class="btn btn-outline-danger">Sil</button></td> 
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

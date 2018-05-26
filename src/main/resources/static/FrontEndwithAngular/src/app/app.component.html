@@ -1,0 +1,61 @@
+<div class="container-fluid">
+
+    <!-- <div class="banner row">
+
+        <img src="..\assets\logos\banner.png" alt="logo">
+        <p class="text-dark mt-4" style="font-weight:bold;font-size:80px;font-family: Sans-serif;margin-left:-13px;">yLibrary</p>
+    </div> -->
+    <div>
+        <nav class="  navbar navbar-expand-lg  navbar-light bg border-bottom">
+            <a class="navbar-brand" routerLink="/">
+                <div class="row">
+                    <img src="..\assets\logos\banner.png" alt="logo">
+                    <p style="font-weight:bold;color:black;font-family: Sans-serif;" class=" mt-2">yLibrary</p>
+                </div>
+            </a>
+            <div class="collapse navbar-collapse ml-5" >
+                    <ul class="nav navbar-nav " style="font-weight:bold">
+                        <li  routerLinkActive="active">
+                            <a routerLink="/kitaplar"  class="nav-link ml-5" >Kitaplar</a>
+                        </li>
+                        <li  routerLinkActive="active">
+                            <a routerLink="/yazarlar" class="nav-link ml-5 mr-5 ">Yazarlar</a>
+                        </li>
+                        <li  routerLinkActive="active">
+                            <a routerLink="/yayinlar" class="nav-link" >Yayınlar</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+    </div>
+
+    <div>
+
+    </div>
+
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" >
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ">
+                    <li class="nav-item ">
+                      <a class="nav-link ml-5" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link ml-5 mr-5" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav> -->
+
+
+
+</div>
+
+<div class="container mt-4">
+    <div class="col-md-12">
+        <router-outlet></router-outlet>   
+    </div>
+</div>

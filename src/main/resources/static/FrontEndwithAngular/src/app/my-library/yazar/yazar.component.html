@@ -1,0 +1,13 @@
+<hr>
+
+<div class="container">
+    <div class="row col-md-12">
+        <div class="card mr-1 mb-1  " style="width: 250px;height:350px;" *ngFor="let yazar of yazarlar">
+            <img class="card-img-top" src="https://imageserver.kitapyurdu.com/select.php?imageid=265567&width=180&isWatermarked=true&pagecount=176"
+                style="width: 220px;margin-left:22px;" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{yazar.yazarAdi}}</h5>
+            </div>
+        </div>
+    </div>
+</div>

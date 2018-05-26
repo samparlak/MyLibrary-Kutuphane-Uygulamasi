@@ -1,0 +1,9 @@
+.card{
+    border:1px solid black;
+}
+
+.card:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    background-color:#94D08B;
+}
