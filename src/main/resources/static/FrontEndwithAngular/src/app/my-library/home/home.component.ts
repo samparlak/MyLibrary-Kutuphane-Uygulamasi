@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   filtered = "";
+  ara="Filtreyi kullanarak Kitap,Yazar veya Yayınevi arayın";
 
   filtreKitap: boolean = true;
   filtreYazar: boolean = false;
@@ -44,6 +45,7 @@ export class HomeComponent implements OnInit {
     this.filtreKitap = false;
     this.filtreYayin = false;
     this.filtreYazar = false;
+    this.ara="Kitap Ara"
     return (this.filtreKitap = true);
   }
 
@@ -51,6 +53,7 @@ export class HomeComponent implements OnInit {
     this.filtreKitap = false;
     this.filtreYayin = false;
     this.filtreYazar = false;
+    this.ara="Yazar Ara"
     return (this.filtreYazar = true);
   }
 
@@ -58,6 +61,7 @@ export class HomeComponent implements OnInit {
     this.filtreKitap = false;
     this.filtreYayin = false;
     this.filtreYazar = false;
+    this.ara="Yayınevi Ara"
     return (this.filtreYayin = true);
   }
 
@@ -103,6 +107,8 @@ export class HomeComponent implements OnInit {
   deleteKitap(kitap){
     this.kitapService.silKitap(kitap.isbnNo).subscribe(()=>{
       this.kitaplar.splice(this.kitaplar.indexOf(kitap),1);
+      this.router.navigate(['bildirim']);
+          
       console.log("Silme İşlemi gerçekleşti");
     }),
     (error)=>{

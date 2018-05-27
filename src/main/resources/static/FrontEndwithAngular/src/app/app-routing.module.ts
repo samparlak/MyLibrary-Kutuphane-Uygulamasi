@@ -9,6 +9,7 @@ import { KitapFormComponent } from "./my-library/kitap/kitap-form/kitap-form.com
 import { KitapDetayComponent } from "./my-library/kitap/kitap-detay/kitap-detay.component";
 import { YazarDetayComponent } from "./my-library/yazar/yazar-detay/yazar-detay.component";
 import { YayinEviDetayComponent } from "./my-library/yayin-evi/yayin-evi-detay/yayin-evi-detay.component";
+import { SilmeComponent } from "./my-library/home/silme/silme.component";
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: "yazarlar", component: YazarComponent },
   { path:  "yazarlar/:id",component:YazarDetayComponent},
   { path: "yayinlar", component: YayinEviComponent },
-  { path:  "yayinlar/:id",component:YayinEviDetayComponent}
+  { path:  "yayinlar/:id",component:YayinEviDetayComponent},
+  {path:"bildirim",component:SilmeComponent}
 ];
 
 @NgModule({

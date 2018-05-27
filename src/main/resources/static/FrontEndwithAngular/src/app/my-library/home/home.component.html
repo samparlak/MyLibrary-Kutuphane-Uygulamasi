@@ -3,7 +3,7 @@
     <div class="ml-5 mt-1">
 
       <div class="input-group mb-5">
-        <input type="search" [(ngModel)]="filtered" class="form-control" placeholder="Filtreyi kullanarak Kitap,Yazar veya Yayınevi ara"
+        <input type="search" [(ngModel)]="filtered" class="form-control" placeholder="{{ara}}"
           aria-label="Recipient's username" aria-describedby="basic-addon2">
         <div class="input-group-append">
           <span class="input-group-text">Filtre</span>
@@ -46,8 +46,8 @@
             </tr>
           </thead>
           <tbody *ngFor="let kitap of kitaplar | filtre:filtered:'kitapAdi'"  >
-            <tr   >
-              <td>
+            <tr  (click)=getKitap(kitap); >
+              <td >
                 <img src="../assets/logos/book-icon.png" alt="ikon" style="max-height:40px;">
               </td>
               <td>{{kitap.isbnNo}}</td>
@@ -72,7 +72,7 @@
             <tr>
               <th></th>
               <th>Yazar Adı</th>
-              <th>Kitap Adı</th>
+              <th>Eserler</th>
               <th></th>
             </tr>
           </thead>
@@ -83,7 +83,7 @@
               </td>
               <td>{{yazar.yazarAdi}}</td>
               <td>{{yazar.kitapAdi}}</td>
-              <td><img class="mr-4" src="../assets/logos/resim.png" alt="home-resim" style="max-height:50px;" ></td>
+             
             </tr>
           </tbody>
         </table>
@@ -98,7 +98,7 @@
             <tr>
               <th></th>
               <th>Yayın Adı</th>
-              <th>Kitap Adı</th>
+              <th>Eserler</th>
               <th></th>
             </tr>
           </thead>
@@ -109,7 +109,6 @@
               </td>
               <td>{{yayin.yayinEviAdi}}</td>
               <td>{{yayin.kitapAdi}}</td>
-              <td><img   src="../assets/logos/resim.png" alt="home-resim" style="max-height:50px;" ></td>
             </tr>
           </tbody>
         </table>
