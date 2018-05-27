@@ -1,6 +1,6 @@
 export class Yazar {
     constructor(
-        public yazarId:number,
+        public isbnNo:number,
         public yazarAdi:String,
         public kitapAdi:String,
         public aciklama:String,

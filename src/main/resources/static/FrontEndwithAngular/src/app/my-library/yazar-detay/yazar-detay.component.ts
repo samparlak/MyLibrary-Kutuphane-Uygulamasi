@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { YazarService } from '../yazar.service';
+import { Yazar } from '../yazar/yazar.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-yazar-detay',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YazarDetayComponent implements OnInit {
 
-  constructor() { }
+id:number;
+yazar:Yazar;
+
+  constructor(private yazarService:YazarService,
+              private route:ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.route.params.subscribe((params)=>{
+      this.id=+params['id'];
+    })
+
+    this.yazarService.getYazarlar().subscribe((res)=>{
+      this.yazar=res[this.id];
+      console.log(res);
+    },
+  (error)=>{
+    console.log(error);
+  })
   }
 
 }

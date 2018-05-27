@@ -2,8 +2,8 @@
 <div class="container">
   <div class="col-md-12">
     <div class="ml-1">
-      <ul class="list-group" *ngFor="let yayinEvi of yayinEvleri" routerLinkActive="active">
-        <a class="list-group-item" style="color:black;">
+      <ul class="list-group" *ngFor="let yayinEvi of yayinEvleri;let i=index" routerLinkActive="active">
+        <a [routerLink]="[i]" class="list-group-item" style="color:black;">
           {{yayinEvi.yayinEviAdi}}
         </a>
       </ul>

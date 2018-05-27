@@ -128,7 +128,7 @@ satirik mahiyetteki günlük şaka ve fantezileriyle nazım formu içinde anlık
 
 insert into
 Kitap(isbn_no,kitap_adi,seri_adi,yazar_adi,yayin_adi,aciklama,resim)
-values(9750824906,'İnce Memed 1-2-3-4','','Yaşar Kemal','YAPI KREDİ YAYINLARI','Yaşar Kemal’in 32 yıllık bir zaman diliminde yazdığı, 4 kitap şeklinde basılan İnce Memed romanı, Türk edebiyatının başyapıtlarından biri.','');
+values(9750824906,'İnce Memed','','Yaşar Kemal','YAPI KREDİ YAYINLARI','Yaşar Kemal’in 32 yıllık bir zaman diliminde yazdığı, 4 kitap şeklinde basılan İnce Memed romanı, Türk edebiyatının başyapıtlarından biri.','');
 
 insert into
 Kitap(isbn_no,kitap_adi,seri_adi,yazar_adi,yayin_adi,aciklama,resim)

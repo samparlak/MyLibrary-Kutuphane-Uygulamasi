@@ -1,3 +1,21 @@
-<p>
-  {{kitap.kitapAdi}}
-</p>
+<hr>
+<div class="container">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="../assets/logos/resim.png" alt="{{kitap.kitapAdi}}"
+          style="width:100%">
+      </div>
+      <div class="col-md-8">
+        <div class="ml-5">
+          <h1> {{kitap.kitapAdi}} </h1><hr>
+          <h5> ISBN numarası : <span style="font-weight:normal">{{kitap.isbnNo}}</span> </h5>
+          <h5> Yazarı : <span style="font-weight:normal">{{kitap.yazarAdi}}</span> </h5>
+          <h5> Yayınevi : <span style="font-weight:normal">{{kitap.yayinEviAdi}}</span> </h5><hr>
+          <h3>Kitap Hakkında</h3><hr>
+          <p> {{kitap.aciklama}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

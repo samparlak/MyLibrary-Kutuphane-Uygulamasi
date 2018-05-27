@@ -5,6 +5,7 @@ import { YazarService } from "../yazar.service";
 import { YayinEviService } from "../yayin-evi.service";
 import { Yazar } from "../yazar/yazar.model";
 import { YayinEvi } from "../yayin-evi/yayin-evi.model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -15,6 +16,23 @@ export class HomeComponent implements OnInit {
   private kitaplar: Kitap[] = [];
   private yazarlar: Yazar[] = [];
   private yayinEvleri: YayinEvi[] = [];
+
+  i:number;
+
+  getKitap(kitap){
+    this.i=this.kitaplar.indexOf(kitap);
+    this.router.navigate(['/kitaplar/'+this.i]);
+  }
+
+  getYazar(yazar){
+    this.i=this.yazarlar.indexOf(yazar);
+    this.router.navigate(['/yazarlar/'+this.i]);
+  }
+
+  getYayin(yayin){
+    this.i=this.yayinEvleri.indexOf(yayin);
+    this.router.navigate(['/yayinlar/'+this.i]);
+  }
 
   filtered = "";
 
@@ -46,7 +64,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private kitapService: KitapService,
     private yazarService: YazarService,
-    private yayinService: YayinEviService
+    private yayinService: YayinEviService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -80,4 +99,20 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
+  deleteKitap(kitap){
+    this.kitapService.silKitap(kitap.isbnNo).subscribe(()=>{
+      this.kitaplar.splice(this.kitaplar.indexOf(kitap),1);
+      console.log("Silme İşlemi gerçekleşti");
+    }),
+    (error)=>{
+      console.log(error);
+    }
+  }
+
+  updateKitap(kitap){
+    this.kitapService.setter(kitap);
+    this.router.navigate(['islemkitap']);
+  }
+
 }

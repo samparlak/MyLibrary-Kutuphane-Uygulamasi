@@ -16,6 +16,8 @@ import { FiltrePipe } from './my-library/filtre.pipe';
 import { KitapDetayComponent } from './my-library/kitap-detay/kitap-detay.component';
 import { YazarDetayComponent } from './my-library/yazar-detay/yazar-detay.component';
 import { YayinEviDetayComponent } from './my-library/yayin-evi-detay/yayin-evi-detay.component';
+import { KitapFormComponent } from './my-library/kitap-form/kitap-form.component';
+
 
 
 
@@ -30,7 +32,8 @@ import { YayinEviDetayComponent } from './my-library/yayin-evi-detay/yayin-evi-d
     FiltrePipe,
     KitapDetayComponent,
     YazarDetayComponent,
-    YayinEviDetayComponent
+    YayinEviDetayComponent,
+    KitapFormComponent,
   ],
   imports: [
     BrowserModule,

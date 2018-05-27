@@ -10,7 +10,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class KitapComponent implements OnInit {
 
+
+  
 private kitaplar:Kitap[]=[];
+
 
   constructor(private kitapService:KitapService) { }
 
@@ -24,6 +27,7 @@ private kitaplar:Kitap[]=[];
     });
   }
 
+ 
 
 
 }

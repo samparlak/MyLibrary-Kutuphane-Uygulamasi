@@ -1,10 +1,11 @@
+
 <hr>
 <div class="container">
     <div class="row col-md-12" >
-        <div class="card mr-1 mb-1  " style="width: 250px;height:450px;" *ngFor="let kitap of kitaplar;let i=index" >
-            <img class="card-img-top" src="https://imageserver.kitapyurdu.com/select.php?imageid=265567&width=180&isWatermarked=true&pagecount=176" style="width: 220px;margin-left:22px;" alt="Card image cap">
+        <div  [routerLink]="[i]" class="card mr-1 mb-1  " style="width: 250px;height:450px;" *ngFor="let kitap of kitaplar;let i=index"  >
+            <img class="card-img-top" src="../assets/logos/resim.png" style="width: 200px;margin-left:25px;margin-top:10px;" alt="Card image cap">
             <div class="card-body" >               
-                <h6 style="font-size:10px;">ISBN numarası:{{kitap.isbnNo}} k {{index}} </h6>
+                <h6 style="font-size:10px;">ISBN numarası:{{kitap.isbnNo}}</h6>
                 <h5 class="card-title">{{kitap.kitapAdi}}</h5>      
                 <p class="card-text"><span style="font-weight:bold">Yazar :</span>    {{kitap.yazarAdi}}</p>
                 <p> <span style="font-weight:bold">Yayınevi :</span> {{kitap.yayinEviAdi}}</p>

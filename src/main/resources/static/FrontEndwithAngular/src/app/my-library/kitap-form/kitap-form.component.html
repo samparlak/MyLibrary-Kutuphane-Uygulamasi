@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="col-md-12 ml-5">
+      <h2 class="mb-5">Kitap Düzenleme Formu</h2>
+    <form (ngSubmit)=onSave()>
+     <div class="row">
+        <div class="col-md-6">
+              <div class="form-group">
+                <label for="id">Kitap Adı</label>
+                <input type="text" class="form-control" name="kitapAdi" [(ngModel)]="kitap.kitapAdi" >
+              </div>
+              <div class="form-group">
+                <label for="id">Yazar Adı</label>
+                <input type="text" class="form-control" name="yazarAdi" [(ngModel)]="kitap.yazarAdi" >
+              </div>
+              <div class="form-group mb-5">
+                <label for="id">Yayınevi</label>
+                <input type="text" class="form-control" name="yayinEviAdi" [(ngModel)]="kitap.yayinEviAdi" >
+              </div>
+              <input  type="submit" class="btn btn-success" value="Kaydet">
+         </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="id">Açıklama</label>
+                  <textarea class="form-control" name="aciklama" id="aciklama" cols="30" rows="12" [(ngModel)]="kitap.aciklama" ></textarea>
+                </div>
+          </div>
+     </div>    
+    </form>
+  </div>
+</div>
