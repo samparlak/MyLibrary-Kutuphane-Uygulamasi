@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Kitap } from '../kitap/kitap.model';
-import { KitapService } from '../kitap.service';
 import {  ActivatedRoute, Params } from '@angular/router';
+import { KitapService } from '../../kitap.service';
+import { Kitap } from '../kitap.model';
 
 @Component({
   selector: 'app-kitap-detay',

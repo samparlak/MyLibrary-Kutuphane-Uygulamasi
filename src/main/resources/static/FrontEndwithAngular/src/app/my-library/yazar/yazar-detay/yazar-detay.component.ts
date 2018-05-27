@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { YazarService } from '../yazar.service';
-import { Yazar } from '../yazar/yazar.model';
 import { ActivatedRoute } from '@angular/router';
+import { Yazar } from '../yazar.model';
+import { YazarService } from '../../yazar.service';
 
 @Component({
   selector: 'app-yazar-detay',

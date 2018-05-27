@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { YayinEviService } from '../yayin-evi.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { YayinEvi } from '../yayin-evi/yayin-evi.model';
+import { YayinEvi } from '../yayin-evi.model';
+import { YayinEviService } from '../../yayin-evi.service';
+
 
 @Component({
   selector: 'app-yayin-evi-detay',

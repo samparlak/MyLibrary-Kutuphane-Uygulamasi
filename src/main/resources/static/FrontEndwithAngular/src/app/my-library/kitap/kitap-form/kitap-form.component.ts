@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Kitap } from "../kitap/kitap.model";
-import { KitapService } from "../kitap.service";
 import { Router } from "@angular/router";
+import { Kitap } from "../kitap.model";
+import { KitapService } from "../../kitap.service";
 
 @Component({
   selector: "app-kitap-form",
