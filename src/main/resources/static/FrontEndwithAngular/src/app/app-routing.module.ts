@@ -10,18 +10,26 @@ import { KitapDetayComponent } from "./my-library/kitap/kitap-detay/kitap-detay.
 import { YazarDetayComponent } from "./my-library/yazar/yazar-detay/yazar-detay.component";
 import { YayinEviDetayComponent } from "./my-library/yayin-evi/yayin-evi-detay/yayin-evi-detay.component";
 import { SilmeComponent } from "./my-library/home/silme/silme.component";
+import { SigninComponent } from "./signin/signin.component";
+import { SignupComponent } from "./signup/signup.component";
+import { AuthGuardService } from "./my-library/auth-guard.service";
+
 
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "islemkitap",component:KitapFormComponent},
-  { path: "kitaplar", component: KitapComponent},
-  { path: "kitaplar/:id", component: KitapDetayComponent },
-  { path: "yazarlar", component: YazarComponent },
-  { path:  "yazarlar/:id",component:YazarDetayComponent},
-  { path: "yayinlar", component: YayinEviComponent },
-  { path:  "yayinlar/:id",component:YayinEviDetayComponent},
-  {path:"bildirim",component:SilmeComponent}
+  { path: "", component: HomeComponent ,canActivate:[AuthGuardService]},
+  { path:"signin",component:SigninComponent},
+  {path:"signup",component:SignupComponent},
+  { path: "islemkitap",component:KitapFormComponent,canActivate:[AuthGuardService] },
+  { path: "kitaplar", component: KitapComponent,canActivate:[AuthGuardService] },
+  { path: "kitaplar/:id", component: KitapDetayComponent,canActivate:[AuthGuardService] },
+  { path: "yazarlar", component: YazarComponent ,canActivate:[AuthGuardService] },
+  { path:  "yazarlar/:id",component:YazarDetayComponent ,canActivate:[AuthGuardService]},
+  { path: "yayinlar", component: YayinEviComponent ,canActivate:[AuthGuardService]},
+  { path:  "yayinlar/:id",component:YayinEviDetayComponent,canActivate:[AuthGuardService]},
+  {path:"silmebildirim",component:SilmeComponent,canActivate:[AuthGuardService]},
+  
+  
 ];
 
 @NgModule({

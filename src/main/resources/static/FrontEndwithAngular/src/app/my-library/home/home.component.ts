@@ -107,7 +107,7 @@ export class HomeComponent implements OnInit {
   deleteKitap(kitap){
     this.kitapService.silKitap(kitap.isbnNo).subscribe(()=>{
       this.kitaplar.splice(this.kitaplar.indexOf(kitap),1);
-      this.router.navigate(['bildirim']);
+      this.router.navigate(['silmebildirim']);
           
       console.log("Silme İşlemi gerçekleşti");
     }),

@@ -1,0 +1,16 @@
+<h5 class="ml-3">Oturum açmak için email ve parolanızı giriniz.</h5><hr>
+
+<form (ngSubmit)="onSignin(f)" #f="ngForm" >
+  <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" class="form-control" required ngModel >
+    </div>
+    <div class="form-group">
+      <label for="password">Parola</label>
+      <input type="password" name="password" id="password"  class="form-control" required ngModel >
+    </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid ">Oturum Aç</button>
+  </div>
+</form>
+

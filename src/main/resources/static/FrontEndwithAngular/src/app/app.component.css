@@ -1,15 +1,19 @@
 img{
-    height: 25px;
-    width: px;
+    height: 70px;
     margin-top: 10px;
     margin-left: 40px;
     
  }
 
  .ortala{
-     margin-left: 575px;
+     margin-left: 540px;
  }
  
  .bg{
-     background-color:#94d08b;
+     background-color:#20CEAF;
  }
+
+ .bg2{
+     background-color:#6DB59E;
+ }
+

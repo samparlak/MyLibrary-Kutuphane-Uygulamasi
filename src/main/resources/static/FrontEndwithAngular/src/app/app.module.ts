@@ -18,6 +18,11 @@ import { YazarDetayComponent } from './my-library/yazar/yazar-detay/yazar-detay.
 import { YayinEviDetayComponent } from './my-library/yayin-evi/yayin-evi-detay/yayin-evi-detay.component';
 import { KitapFormComponent } from './my-library/kitap/kitap-form/kitap-form.component';
 import { SilmeComponent } from './my-library/home/silme/silme.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { AuthService } from './my-library/auth.service';
+import { AuthGuardService } from './my-library/auth-guard.service';
+
 
 
 
@@ -37,6 +42,8 @@ import { SilmeComponent } from './my-library/home/silme/silme.component';
     YayinEviDetayComponent,
     KitapFormComponent,
     SilmeComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,7 @@ import { SilmeComponent } from './my-library/home/silme/silme.component';
     FormsModule
     
   ],
-  providers: [KitapService,YazarService,YayinEviService],
+  providers: [KitapService,YazarService,YayinEviService,AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
