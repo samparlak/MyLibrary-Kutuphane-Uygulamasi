@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { AuthService } from "../my-library/auth.service";
 import { Router } from "@angular/router";
+import { AuthEmailPasswordService } from "../my-library/auth-email-password.service";
 
 @Component({
   selector: "app-signup",
@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./signup.component.css"]
 })
 export class SignupComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthEmailPasswordService, private router: Router) {}
 
   Kayit: String;
 

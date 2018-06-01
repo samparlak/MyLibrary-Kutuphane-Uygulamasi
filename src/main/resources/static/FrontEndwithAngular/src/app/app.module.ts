@@ -20,8 +20,8 @@ import { KitapFormComponent } from './my-library/kitap/kitap-form/kitap-form.com
 import { SilmeComponent } from './my-library/home/silme/silme.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { AuthService } from './my-library/auth.service';
 import { AuthGuardService } from './my-library/auth-guard.service';
+import { AuthEmailPasswordService } from './my-library/auth-email-password.service';
 
 
 
@@ -52,7 +52,7 @@ import { AuthGuardService } from './my-library/auth-guard.service';
     FormsModule
     
   ],
-  providers: [KitapService,YazarService,YayinEviService,AuthService,AuthGuardService],
+  providers: [KitapService,YazarService,YayinEviService,AuthEmailPasswordService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

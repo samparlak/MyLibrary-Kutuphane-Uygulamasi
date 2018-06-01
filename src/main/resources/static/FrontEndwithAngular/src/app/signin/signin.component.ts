@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../my-library/auth.service';
 import { Router } from '@angular/router';
+import { AuthEmailPasswordService } from '../my-library/auth-email-password.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class SigninComponent implements OnInit {
   
   
 
-  constructor(private authService:AuthService,
+  constructor(private authService:AuthEmailPasswordService,
               private router:Router) { }
   
   

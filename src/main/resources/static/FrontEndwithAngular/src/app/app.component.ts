@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import * as firebase from "firebase";
-import { AuthService } from "./my-library/auth.service";
+import { AuthEmailPasswordService } from "./my-library/auth-email-password.service";
 
 @Component({
   selector: "app-root",
@@ -10,7 +10,7 @@ import { AuthService } from "./my-library/auth.service";
 export class AppComponent implements OnInit {
   title = "app";
 
-constructor(private authService:AuthService){}
+constructor(private authService:AuthEmailPasswordService){}
 
   ngOnInit() {
     firebase.initializeApp({
