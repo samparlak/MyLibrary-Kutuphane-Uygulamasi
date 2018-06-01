@@ -23,9 +23,30 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthGuardService } from './my-library/auth-guard.service';
 import { AuthEmailPasswordService } from './my-library/auth-email-password.service';
 
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from "angular5-social-login";
 
 
-
+// Configs 
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider("212943032659422")
+        },
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("1016994148249-cvijokf575kprvsj6899n1ms5a213uu4.apps.googleusercontent.com")
+        },
+      ]
+  );
+  return config;
+}
 
 
 
