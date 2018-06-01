@@ -41,8 +41,8 @@ export function getAuthServiceConfigs() {
         },
         {
           id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider("1016994148249-cvijokf575kprvsj6899n1ms5a213uu4.apps.googleusercontent.com")
-        },
+          provider: new GoogleLoginProvider("514611328763-e35ecjtrg77ul7tt8fj20u57pn5vnmu5.apps.googleusercontent.com")
+        }
       ]
   );
   return config;
@@ -70,10 +70,14 @@ export function getAuthServiceConfigs() {
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule
     
   ],
-  providers: [KitapService,YazarService,YayinEviService,AuthEmailPasswordService,AuthGuardService],
+  providers: [KitapService,YazarService,YayinEviService,AuthEmailPasswordService,AuthGuardService,	{
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

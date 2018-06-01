@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthEmailPasswordService } from '../my-library/auth-email-password.service';
-import {
-  AuthService,
-  SocialUser,
-  FacebookLoginProvider,
-  GoogleLoginProvider
-} from 'angular5-social-login';
+import { SocialUser, AuthService } from 'angular5-social-login';
+import { FacebookLoginProvider } from 'angular5-social-login';
+import { GoogleLoginProvider } from 'angular5-social-login';
+
 
 @Component({
   selector: 'app-signin',
@@ -16,40 +14,14 @@ import {
 })
 export class SigninComponent implements OnInit {
 
-  private user: SocialUser;
-  public authorized: boolean = false;
+  
   
 
   constructor(private authService:AuthEmailPasswordService,
-              private router:Router,
-              private socialAuthService: AuthService ) { }
+              private router:Router
+              ) { }
   
-              public socialSignIn(socialPlatform : string) {  
-
-                let socialPlatformProvider;
-                if(socialPlatform == "facebook"){
-                  socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
-                }else if(socialPlatform == "google"){
-                  socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-                }
-                
-                this.socialAuthService.signIn(socialPlatformProvider).then(
-                  (userData) => {
-                    console.log(socialPlatform+" sign in data : " , userData);
-                    // Now sign-in with userData        
-                    if (userData != null) {
-                           this.authorized = true;
-                           this.user = userData;               
-                        }       
-                  }
-                );
-              }
-            
-              public signOut(){
-                      this.socialAuthService.signOut();
-                      this.authorized = false;
-                  }
-              
+             
             
   
   ngOnInit() {
@@ -57,12 +29,20 @@ export class SigninComponent implements OnInit {
     console.log(token); */
   }
 
+  redirectToSignUp(){
+    this.router.navigate(['/signup']);
+  }
+
+  /* --------------Email ve Parola ile Giriş---------------- */
+
   onSignin(form:NgForm){
     const email=form.value.email;
     const password=form.value.password;
     this.authService.signinUser(email,password);
   }
 
-
+  socialSignIn(social:string){
+    this.authService.socialSignIn(social);
+  }
 
 }

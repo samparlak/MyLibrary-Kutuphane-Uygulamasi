@@ -24,7 +24,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav nav-tabs ml-auto">
-                <ng-template [ngIf]="!authService.isAutheticated()" >
+                <ng-template [ngIf]="!authService.isAutheticated() && !authService.isSocialAuthenticated()" >
                     <li routerLinkActive="active">
                         <a routerLink="/signup" class="nav-link mr-auto">Kayıt Ol</a>
                     </li>
@@ -33,7 +33,7 @@
                     </li>
                 </ng-template>
                 <li routerLinkActive="active">
-                    <a *ngIf="authService.isAutheticated()  " (click)="onLogout()" style="cursor:pointer" class="nav-link mr-auto">Çıkış Yap</a>
+                    <a *ngIf="authService.isAutheticated() || authService.isSocialAuthenticated()" (click)="onLogout()" style="cursor:pointer" class="nav-link mr-auto">Çıkış Yap</a>
                 </li>
             </ul>
 

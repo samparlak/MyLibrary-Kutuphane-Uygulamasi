@@ -1,0 +1,21 @@
+.ortala {
+  margin-left: 250px;
+}
+
+.facebook {
+  background-color: #4267b2;
+  color: white;
+  font-weight: bold;
+}
+.facebook:hover {
+  background-color: #164675;
+}
+
+.google {
+  background-color: white;
+  color: #686F7A;
+  font-weight: bold;
+}
+.google:hover{
+    background-color:#E6E1E1;
+}
