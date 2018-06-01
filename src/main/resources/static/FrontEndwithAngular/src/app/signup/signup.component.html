@@ -4,12 +4,12 @@
   <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2">
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" class="form-control" required ngModel >
+      <input type="email" name="email" id="email" class="form-control" placeholder="Örnek : test@test.com" required email ngModel >
     </div>
     <div class="form-group">
       <label for="password">Parola</label>
-      <input type="password" name="password" id="password"  class="form-control" required ngModel >
+      <input type="password" name="password" id="password" placeholder="Parola minimum 6 hane olmalı ! "  class="form-control" required ngModel >
     </div>
-      <button  class="btn btn-primary" type="submit" [disabled]="!f.valid ">Kayıt Ol</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid ">Kayıt Ol</button>
   </div>
 </form>

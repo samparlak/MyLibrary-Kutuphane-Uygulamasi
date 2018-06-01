@@ -19,8 +19,8 @@ export class SigninComponent implements OnInit {
   
   
   ngOnInit() {
-    let token=this.authService.getToken();
-    console.log(token);
+    /* let token=this.authService.getToken();
+    console.log(token); */
   }
 
   onSignin(form:NgForm){

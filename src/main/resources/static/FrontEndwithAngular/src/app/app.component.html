@@ -1,10 +1,4 @@
 <div class="container-fluid">
-
-    <!-- <div class="banner row">
-
-        <img src="..\assets\logos\banner.png" alt="logo">
-        <p class="text-dark mt-4" style="font-weight:bold;font-size:80px;font-family: Sans-serif;margin-left:-13px;">yLibrary</p>
-    </div> -->
     <div>
         <nav class="  navbar navbar-expand-lg  navbar-light bg " style="font-weight:bold">
             <a class="navbar-brand ortala" routerLink="/">
@@ -39,7 +33,7 @@
                     </li>
                 </ng-template>
                 <li routerLinkActive="active">
-                    <a *ngIf="authService.isAutheticated()" (click)="onLogout()" style="cursor:pointer" class="nav-link mr-auto">Çıkış Yap</a>
+                    <a *ngIf="authService.isAutheticated()  " (click)="onLogout()" style="cursor:pointer" class="nav-link mr-auto">Çıkış Yap</a>
                 </li>
             </ul>
 

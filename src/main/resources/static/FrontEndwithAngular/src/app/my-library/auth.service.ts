@@ -4,24 +4,27 @@ import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthService {
- 
-  token:String;
- 
-  constructor(private router:Router) {}
+  token: String;
+
+  success: String;
+
+  constructor(private router: Router) {}
+
+  getSuccess() {
+    return this.success;
+  }
 
   signupUser(email: string, password: string) {
     firebase
       .auth()
-      .createUserWithEmailAndPassword(email, password).then((res)=>{
+      .createUserWithEmailAndPassword(email, password)
+      .then(res => {
+        this.success = "Kayıt İşlemi Başarılı.";
         console.log("Kayıt başarılı");
       })
       .catch(error => {
-        console.log(error);
-        if(error){
-          console.log("Kayıt Başarısız");
-        }else{
-          console.log("Kayıt başarılı.")
-        }
+        this.success = "Kayıt İşlemi Başarısız.Lütfen geçerli bir email ve parola giriniz.";
+        console.log("Kayıt Başarısız : "+error);
       });
   }
 
@@ -29,32 +32,37 @@ export class AuthService {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(response => {firebase.auth().currentUser.getIdToken().then((token:string)=>{
-        this.token=token;
-        console.log("Token : "+token);
-        this.router.navigate(['/']);
-      })})
+      .then(response => {
+        firebase
+          .auth()
+          .currentUser.getIdToken()
+          .then((token: string) => {
+            this.token = token;
+            console.log("Token : " + token);
+            this.router.navigate(["/"]);
+          });
+      })
       .catch(error => console.log(error));
   }
 
-logout(){
-  firebase.auth().signOut();
-  this.token=null;
-  this.router.navigate(['/signin'])
-  console.log("Çıkış Yapıldı.Token silindi.Token : "+this.token);
+  logout() {
+    firebase.auth().signOut();
+    this.token = null;
+    this.router.navigate(["/signin"]);
+    console.log("Çıkış Yapıldı.Token silindi.Token : " + this.token);
+  }
 
-}
+  getToken() {
+    firebase
+      .auth()
+      .currentUser.getIdToken()
+      .then((token: string) => {
+        this.token = token;
+      });
+    return this.token;
+  }
 
-
-getToken(){
-   firebase.auth().currentUser.getIdToken().then((token:string)=>{
-    this.token=token;
-  });
-  return this.token;
-}
-
-isAutheticated(){
-  return this.token !=null;
-}
-
+  isAutheticated() {
+    return this.token != null;
+  }
 }

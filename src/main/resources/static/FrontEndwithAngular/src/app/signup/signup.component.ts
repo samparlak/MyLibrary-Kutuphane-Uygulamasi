@@ -1,16 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../my-library/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-signup",
   templateUrl: "./signup.component.html",
   styleUrls: ["./signup.component.css"]
 })
-export class SignupComponent {
-  constructor(private authService: AuthService) {}
+export class SignupComponent implements OnInit {
+  constructor(private authService: AuthService, private router: Router) {}
 
+  Kayit: String;
 
+  ngOnInit() {  
+  }
 
   onSignup(form: NgForm) {
     const email = form.value.email;
