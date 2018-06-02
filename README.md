@@ -19,4 +19,4 @@ proje üzerine gelin,sağ tıklayın ve `Run As Spring Boot App` tıklayın.Böy
 - Terminal üzerine gidin ve konsola `ng serve --open` yazın.Böylece Frontend yüzümüz çalışacaktır 
 ve otomatik olarak uygulamamız yüklenecektir.
 
-[buradan](src/main/resources/static/FrontEndwithAngular/)
+
