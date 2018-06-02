@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/* Hibernate Anotasyonları ile Sınıf verileri Database ile ilişkilendirildi. */
+
 @Entity
 @Table(name="Kitap")
 public class Kitap {

@@ -1,3 +1,7 @@
+/* REST servisleriyle dönen nesneleri Front End nesneleriyle eşleştiriz.
+Böylece dönen nesnelere ait attribute leri ilişkilendirir ve Front End uygulamasının 
+her yerinde kullanırız.*/
+
 export class Kitap {
     constructor(
         public isbnNo:number,

@@ -1,3 +1,6 @@
+<!--  [routerLink]="[i]" ile "../i" şeklindeki uri ya yönlendirir.
+*ngFor="let yazar of yazarlar;let i=index" kısmındaki i verisine ise seçtiğimiz nesnenin indexini atadık.
+Yani biz bir nesneye tıkladığımızda şayet o nesneye ait index 3 ise bizi "../3" URI 'na yönlendirecektir.'  -->
 
 <hr>
 <div class="container">
@@ -13,7 +16,3 @@
         </div>
     </div>
 </div>
-
-<!-- <ul *ngFor="let kitap of kitaplar">
-        <li class="list-group-item"> {{kitap.kitapAdi}} {{kitap.yazarAdi}} </li>
-    </ul> -->

@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mylibrary.dao.YayinEviRepository;
 import com.mylibrary.model.YayinEvi;
 
+/* JPA metotlarıyla databaseden veri çağırma,silme,oluşturma,düzenleme işlemleri yapılır.
+	REST servisleri ile bu CRUD işlemleri ilişkilendirilir ve istemciler için ulaşılabilir hale getirilir.*/
+
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins="http://localhost:4200",allowedHeaders="*")

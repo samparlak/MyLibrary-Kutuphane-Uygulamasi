@@ -18,6 +18,8 @@ export class YayinEviComponent implements OnInit {
     
   }
 
+  /* REST servislerini kullanarak getirdiğimiz verileri Front End tarafında oluşturduğumuz verilere atarız. */
+
   ngOnInit() {
     this.yayinEviService.getYayinEvleri().subscribe((res)=>{
       this.yayinEvleri=res;

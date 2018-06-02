@@ -6,6 +6,5 @@ import com.mylibrary.model.YayinEvi;
 
 public interface YayinEviRepository extends JpaRepository<YayinEvi, Long>{
 
-//	List<YayinEvi> findAll();
 	
 }

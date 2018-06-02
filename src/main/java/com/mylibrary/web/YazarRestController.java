@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mylibrary.dao.YazarRepository;
 import com.mylibrary.model.Yazar;
 
+/* JPA metotlarıyla databaseden veri çağırma,silme,oluşturma,düzenleme işlemleri yapılır.
+	REST servisleri ile bu CRUD işlemleri ilişkilendirilir ve istemciler için ulaşılabilir hale getirilir.*/
+
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins="http://localhost:4200",allowedHeaders="*")

@@ -17,6 +17,9 @@ export class KitapFormComponent implements OnInit {
     this.kitap = this.kitapService.getter();
   }
 
+  /* kitap-form.component.html'den gelen form verilerine ait isbnNo verisi tanımlıysa
+    Düzenlenen Form verileri kitap.service.ts 'deki düzenleKitap() metoduyla 
+    REST servisleri ile Spring ile oluşturulan API mize gider ve database 'e kayıt olur. */
   onSave() {
     if (this.kitap.isbnNo !== undefined) {
       this.kitapService.düzenleKitap(this.kitap).subscribe(

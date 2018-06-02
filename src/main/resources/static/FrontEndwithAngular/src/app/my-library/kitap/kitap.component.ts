@@ -10,12 +10,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class KitapComponent implements OnInit {
 
-
-  
 private kitaplar:Kitap[]=[];
 
-
   constructor(private kitapService:KitapService) { }
+
+/* REST servislerini kullanarak getirdiğimiz verileri Front End tarafında oluşturduğumuz verilere atarız. */
 
   ngOnInit() {
     this.kitapService.getKitaplar().subscribe((res)=>{

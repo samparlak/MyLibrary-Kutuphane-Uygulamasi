@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
 
   i:number;
 
+  /* Aşağıdaki 3 metot, tıklanılan nesnenin indexi kullanılarak ilgili path'a yönlendirme işlemidir. */
   getKitap(kitap){
     this.i=this.kitaplar.indexOf(kitap);
     this.router.navigate(['/kitaplar/'+this.i]);
@@ -34,6 +35,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/yayinlar/'+this.i]);
   }
 
+  /* filtrele metotlarıyla seçtiğimiz filtre true döner ve true olma durumuna göre 
+  component içinde seçenekler ve yönlendirmeler meydana gelir */
   filtered = "";
   ara="Filtreyi kullanarak Kitap,Yazar veya Yayınevi arayın";
 
@@ -72,6 +75,8 @@ export class HomeComponent implements OnInit {
     private router:Router
   ) {}
 
+  /* REST servisleriyle GET metoduyla sağlanan veriler component içindeki verilere atanır.
+  ngOnInit() metodu ile önyüklemeye alınır.*/
   ngOnInit() {
     this.kitapService.getKitaplar().subscribe(
       res => {
@@ -104,6 +109,8 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  /* kitap.service.ts 'deki silKitap() metoduyla REST servislerinin DELETE işlemi ile  
+  Spring ile oluşturulan API içerisinde kayıt databaseden silinir. */
   deleteKitap(kitap){
     this.kitapService.silKitap(kitap.isbnNo).subscribe(()=>{
       this.kitaplar.splice(this.kitaplar.indexOf(kitap),1);

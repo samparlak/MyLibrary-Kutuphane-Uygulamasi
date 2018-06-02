@@ -1,5 +1,9 @@
 <hr>
 
+<!--  [routerLink]="[i]" ile "../i" şeklindeki uri ya yönlendirir.
+*ngFor="let yazar of yazarlar;let i=index" kısmındaki i verisine ise seçtiğimiz nesnenin indexini atadık.
+Yani biz bir nesneye tıkladığımızda şayet o nesneye ait index 3 ise bizi "../3" URI 'na yönlendirecektir.'  -->
+
 <div class="container"  >
     <div class="row col-md-12">
         <div [routerLink]="[i]" class="card mr-1 mb-1  " style="width: 250px;height:350px;"

@@ -14,7 +14,7 @@ import { SigninComponent } from "./signin/signin.component";
 import { SignupComponent } from "./signup/signup.component";
 import { AuthGuardService } from "./my-library/auth-guard.service";
 
-
+/* Site için yönlendirmelerin ve sınırlamaların kontrol edilmesi */
 
 const routes: Routes = [
   { path: "", component: HomeComponent ,canActivate:[AuthGuardService]},

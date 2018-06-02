@@ -1,5 +1,8 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
+/* Arama Motorunu oluşturmak için Pipe kullandım.
+Böylece arama butonuna basmaya gerek kalmadan sonuçlar listelenebilir.*/
+
 @Pipe({
   name: "filtre",
   pure: false
@@ -24,4 +27,3 @@ export class FiltrePipe implements PipeTransform {
     return resultArray;
   }
 }
-

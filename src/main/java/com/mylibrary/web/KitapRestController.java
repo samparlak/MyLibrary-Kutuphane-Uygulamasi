@@ -1,5 +1,7 @@
 package com.mylibrary.web;
 
+/* JPA metotlarıyla databaseden veri çağırma,silme,oluşturma,düzenleme işlemleri yapılır.
+ 	REST servisleri ile bu CRUD işlemleri ilişkilendirilir ve istemciler için ulaşılabilir hale getirilir.*/
 
 import java.util.List;
 import java.util.Optional;

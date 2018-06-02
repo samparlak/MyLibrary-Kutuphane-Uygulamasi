@@ -21,19 +21,12 @@ export class SigninComponent implements OnInit {
               private router:Router
               ) { }
   
-             
-            
-  
   ngOnInit() {
-    /* let token=this.authService.getToken();
-    console.log(token); */
   }
 
   redirectToSignUp(){
     this.router.navigate(['/signup']);
   }
-
-  /* --------------Email ve Parola ile Giriş---------------- */
 
   onSignin(form:NgForm){
     const email=form.value.email;

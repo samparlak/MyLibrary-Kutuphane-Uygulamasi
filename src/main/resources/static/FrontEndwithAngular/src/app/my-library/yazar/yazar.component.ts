@@ -13,6 +13,8 @@ export class YazarComponent implements OnInit {
 
   constructor(private yazarService:YazarService) { }
 
+  /* REST servislerini kullanarak getirdiğimiz verileri Front End tarafında oluşturduğumuz verilere atarız. */
+  
   ngOnInit() {
     this.yazarService.getYazarlar().subscribe((res)=>{
       this.yazarlar=res;

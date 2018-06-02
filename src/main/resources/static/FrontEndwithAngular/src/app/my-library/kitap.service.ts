@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Kitap } from './kitap/kitap.model';
 
+/* Spring ile oluşturduğumuz API ye  REST servisleri ulaşmak için oluşturulan metotlar */
 
 @Injectable()
 export class KitapService {
