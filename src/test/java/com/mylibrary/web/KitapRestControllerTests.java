@@ -1,7 +1,5 @@
 package com.mylibrary.web;
 
-
-
 import java.util.List;
 import java.util.Optional;
 
@@ -22,8 +20,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.mylibrary.dao.KitapRepository;
 import com.mylibrary.model.Kitap;
-
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -81,8 +77,9 @@ public class KitapRestControllerTests {
 		kitapRepository.save(kitap); /* Veritabanımıza yeni bir kitap eklendi */
 
 		Optional<Kitap> kitap1 = kitapRepository.findById(1111L); /* Eklenen kitapı geri çağırdık. */
-		MatcherAssert.assertThat(kitap1.get().getKitapAdi(),
-				Matchers.equalTo("TestKitap")); /* Eklenen Kitapla Çağırılan Kitap Karşılaştırması */
+		MatcherAssert.assertThat(kitap1.get().getKitapAdi(), Matchers.equalTo("TestKitap"));
+		MatcherAssert.assertThat(kitap1.get().getYazarAdi(), Matchers.equalTo("TestYazar"));
+		/* Eklenen Kitapla Çağırılan Kitap Karşılaştırması */
 
 		MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
 				.get("http://localhost:8080/api/kitaplar/1111");
@@ -103,41 +100,43 @@ public class KitapRestControllerTests {
 		kitaplar.get(0).setKitapAdi("TestKitap1");
 		kitaplar.get(0).setYazarAdi("TestYazar1");
 		kitapRepository.save(kitaplar.get(0)); /* 1.Kitap Düzenlendi */
-		
+
 		kitaplar.get(1).setKitapAdi("TestKitap2");
 		kitaplar.get(1).setYazarAdi("TestYazar2");
 		kitapRepository.save(kitaplar.get(1)); /* 2.Kitap Düzenlendi */
 
-		MatcherAssert.assertThat(kitaplar.get(0).getKitapAdi(),
-				Matchers.equalTo("TestKitap1")); /* Düzenlenen 1.Kitapla Çağırılan 1.Kitap Karşılaştırması */
-		MatcherAssert.assertThat(kitaplar.get(1).getKitapAdi(),
-				Matchers.equalTo("TestKitap2")); /* Düzenlenen 1.Kitapla Çağırılan 1.Kitap Karşılaştırması */
-		
+		MatcherAssert.assertThat(kitaplar.get(0).getKitapAdi(), Matchers.equalTo("TestKitap1"));
+		MatcherAssert.assertThat(kitaplar.get(0).getYazarAdi(), Matchers.equalTo("TestYazar1"));
+		/* Düzenlenen 1.Kitapla Çağırılan 1.Kitap Karşılaştırması */
+
+		MatcherAssert.assertThat(kitaplar.get(1).getKitapAdi(), Matchers.equalTo("TestKitap2"));
+		MatcherAssert.assertThat(kitaplar.get(1).getYazarAdi(), Matchers.equalTo("TestYazar2"));
+		/* Düzenlenen 2.Kitapla Çağırılan 2.Kitap Karşılaştırması */
 
 		MockHttpServletRequestBuilder requestBuilder1 = MockMvcRequestBuilders
 				.get("http://localhost:8080/api/kitaplar/6050904222");
 		MvcResult mvcResult1 = mockMvc.perform(requestBuilder1).andReturn();
 		MatcherAssert.assertThat(mvcResult1.getResponse().getStatus(), Matchers.equalTo(200));
 		/* Düzenlenen 1. Kitaba ait URI ile Bağlantı Testi */
-		
+
 		MockHttpServletRequestBuilder requestBuilder2 = MockMvcRequestBuilders
 				.get("http://localhost:8080/api/kitaplar/6050906486");
 		MvcResult mvcResult2 = mockMvc.perform(requestBuilder2).andReturn();
 		MatcherAssert.assertThat(mvcResult2.getResponse().getStatus(), Matchers.equalTo(200));
 		/* Düzenlenen 2. Kitaba ait URI ile Bağlantı Testi */
-		
+
 	}
-		
-		@Test
-		public void testdeleteOne() throws Exception {
-			
-			Optional<Kitap> kitap1 = kitapRepository.findById(6050904222L);  /*6050904222 ISBN nolu kitap çağırıldı.*/
-			MatcherAssert.assertThat(kitap1.isPresent(), Matchers.equalTo(true)); /*Kitabın varlığı test edildi.*/
-			kitapRepository.deleteById(6050904222L);	/*6050904222 ISBN nolu kitap silindi.*/
-					
-			Optional<Kitap> kitap2 = kitapRepository.findById(6050904222L);		 /*Silindikten sonra kitap çağırıldı.*/
-			MatcherAssert.assertThat(kitap2.isPresent(), Matchers.equalTo(false));	 /*Kitabın yokluğu test edildi.*/
-			
-		}
+
+	@Test
+	public void testdeleteOne() throws Exception {
+
+		Optional<Kitap> kitap1 = kitapRepository.findById(6050904222L); /* 6050904222 ISBN nolu kitap çağırıldı. */
+		MatcherAssert.assertThat(kitap1.isPresent(), Matchers.equalTo(true)); /* Kitabın varlığı test edildi. */
+		kitapRepository.deleteById(6050904222L); /* 6050904222 ISBN nolu kitap silindi. */
+
+		Optional<Kitap> kitap2 = kitapRepository.findById(6050904222L); /* Silindikten sonra kitap çağırıldı. */
+		MatcherAssert.assertThat(kitap2.isPresent(), Matchers.equalTo(false)); /* Kitabın yokluğu test edildi. */
+
+	}
 
 }

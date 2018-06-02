@@ -163,7 +163,7 @@ values(1,'Agatha Christie','Üç Perdelik Cinayet , Beş Küçük Domuz, Sessiz 
 
 insert into
 Yazar(isbn_no,yazar_adi,kitap_adi,aciklama,resim)
-values(2,' Halil İnalcık','Osmanlı İdare ve Ekonomi Tarihi , Atatürk ve Demokratik Türkiye, Şair ve Patron, Doğu Batı / Makaleler 1-2, Tarihe Düşülen Notlar, Osmanlılar ve Haçlılar, Osmanlı Tarihinde İslamiyet ve Devlet, Tanzimat ve Bulgar Meselesi, Osmanlıda Devlet Hukuk ve Adalet, Osmanlı ve Modern Türkiye','1916 İstanbul doğumlu. 1942-1972 yıllarında Ankara Üniversitesi DTCF ve SBF’de Osmanlı tarihi dersleri vermiştir. 1972’de Chicago Üniversitesi’ne davet edilmiş ve 1986 yılına kadar bu üniversitede Tarih bölümünde ders vermiştir. 
+values(2,'Halil İnalcık','Osmanlı İdare ve Ekonomi Tarihi , Atatürk ve Demokratik Türkiye, Şair ve Patron, Doğu Batı / Makaleler 1-2, Tarihe Düşülen Notlar, Osmanlılar ve Haçlılar, Osmanlı Tarihinde İslamiyet ve Devlet, Tanzimat ve Bulgar Meselesi, Osmanlıda Devlet Hukuk ve Adalet, Osmanlı ve Modern Türkiye','1916 İstanbul doğumlu. 1942-1972 yıllarında Ankara Üniversitesi DTCF ve SBF’de Osmanlı tarihi dersleri vermiştir. 1972’de Chicago Üniversitesi’ne davet edilmiş ve 1986 yılına kadar bu üniversitede Tarih bölümünde ders vermiştir. 
 Türkiye ve Türkiye dışında altı üniversite tarafından Fahri Doktora unvanı verilmiş olan Halil İnalcık Türk Dışişleri Bakanlığı Yüksek Hizmet Madalyası’na ve 2003 yılında Kültür Bakanlığı Sanat ve Kültür Büyük Ödülü’ne lâyık görülmüştür. 
 İnalcık, Türkiye, Amerika, İngiltere ve Sırp Akademileri üyeliğine seçilmiştir. İngiliz ve Amerikan Tarih Kurumları ve Royal Asiatic Society üyesidir.
 Ayrıca Bilkent Üniversitesi Tarih Bölümü öğretim üyesi olan İnalcık, 26 Temmuz 2016 tarihinde saat 19.10 sıralarında yaşamını yitirdi.','');
