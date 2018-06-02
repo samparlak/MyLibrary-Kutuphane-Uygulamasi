@@ -1,5 +1,5 @@
 # MyLibrary Kütüphane Uygulaması
-  Email ve parola ile hesap oluşturabileceğimiz,Facebook , Google ya da oluşturduğumuz hesapla giriş yapabileceğimiz
+  Email ve parola ile hesap oluşturabileceğimiz , Facebook , Google ya da oluşturduğumuz hesapla giriş yapabileceğimiz
   kitapları , yazarları ve yayınevlerini bulup hakkında bilgi edinebileceğimiz , kitap kayıtlarını düzenleyip silebileceğimiz bir uygulamadır.
   Uygulamanın Frontend bölümü Angular5 kullanılarak , Backend bölümü ise Spring kullanılarak yapılmıştır.Frontend bölümüne [buradan](src/main/resources/static/FrontEndwithAngular/) ulaşabilirsiniz.Uygulama içinde kullanılan 
   çeşitli teknik seçimleri , kabulleri ve nedenlerini yorum satırlarında bulabilirsiniz.
