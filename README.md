@@ -7,6 +7,11 @@
 ## Kullanılan Teknolojiler
 Angular5 , Spring , Java , Typescript , Bootstrap4 , SQL(Embedded H2) , REST , Firebase
 
+## Kullanılan Kütüphaneler
+- firebase `npm install --save firebase`
+- angular5-social-login `npm install --save angular5-social-login`
+
+
 ## Yüklemek için
 `https://github.com/samparlak/MyLibrary-Kutuphane-Uygulamasi.git` linkini Spring uygulamasına import edebilirsiniz.
 Ya da dosyayı indirip Spring çalışma alanına atabilirsiniz.
