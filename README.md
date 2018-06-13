@@ -21,5 +21,5 @@ ve otomatik olarak uygulamamız yüklenecektir.
 
 ## Link
 
-[Youtube](https://www.youtube.com/watch?v=PaY3JMxrXhs&feature=youtu.be)
+Projeyi önizlemek için : [Youtube](https://www.youtube.com/watch?v=PaY3JMxrXhs&feature=youtu.be)
 
