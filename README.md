@@ -13,8 +13,9 @@ Angular5 , Spring , Java , Typescript , Bootstrap4 , SQL(Embedded H2) , REST , F
 
 
 ## Yüklemek için
-`https://github.com/samparlak/MyLibrary-Kutuphane-Uygulamasi.git` linkini Spring uygulamasına import edebilirsiniz.
+- `https://github.com/samparlak/MyLibrary-Kutuphane-Uygulamasi.git` linkini Spring uygulamasına import edebilirsiniz.
 Ya da dosyayı indirip Spring çalışma alanına atabilirsiniz.
+- `src\main\resources\static\FrontEndwithAngular` dizinine giderek kütüphaneleri belirttiğim şekilde yükleyin.
 
 ## Çalıştırmak için
 - Uygulamayı import ettikten ya da çalışma alanına attıktan sonra Spring üzerinden uygulamayı çalıştırmak için
